@@ -7,7 +7,9 @@ import { getFinancialContext } from '../financial/engine.js';
 import { detectIntent, detectLanguage } from './intent.js';
 import { userData, transactions, goals } from '../../data.js';
 
-const API_URL = '/api/ai/ask';
+const API_URL = import.meta.env.PROD 
+  ? 'https://your-app-name.onrender.com/api/ai/ask' // Change this to your actual Render URL
+  : '/api/ai/ask';
 
 export async function askFinancialCopilot(question) {
   try {
