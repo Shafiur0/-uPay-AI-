@@ -54,7 +54,7 @@ export const icons = {
     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
   </svg>`,
 
-  bot: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  bot: `<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="11" width="18" height="10" rx="2"></rect>
     <circle cx="12" cy="5" r="2"></circle>
     <path d="M12 7v4"></path>

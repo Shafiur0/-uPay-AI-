@@ -860,7 +860,7 @@ export function renderAskMyMoneyPage(app, render) {
         <button class="back-btn" id="ai-back-btn" style="background:transparent;" aria-label="Go back">${icons.arrowLeft}</button>
         <div style="flex:1;">
           <h2 style="font-size:16px;margin:0;display:flex;align-items:center;gap:8px;">
-            <span style="color:var(--ai-primary);">${icons.bot}</span>
+            <span style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;color:var(--ai-primary);">${icons.bot}</span>
             Ask My Money
           </h2>
           <p style="font-size:12px;color:var(--text-muted);margin:0;">uPay AI Financial Copilot</p>
@@ -991,8 +991,9 @@ function renderStructuredAIResponse(data) {
 
   let html = `
   <div class="chat-insight-card" style="margin-top:0;align-self:flex-start;max-width:92%;">
-    <div class="chat-insight-header">
-      ${icons.bot} ${escapeHtml(data.title || 'Financial Insight')}
+    <div class="chat-insight-header" style="display:flex;align-items:center;gap:8px;">
+      <span style="width:24px;height:24px;display:flex;align-items:center;justify-content:center;color:var(--ai-primary);flex-shrink:0;">${icons.bot}</span> 
+      <span style="font-weight:600;font-size:14px;color:var(--ai-primary);">${escapeHtml(data.title || 'Financial Insight')}</span>
       ${data.confidence ? `<span style="margin-left:auto;font-size:10px;font-weight:400;color:var(--text-muted);">${Math.round(data.confidence * 100)}% confidence</span>` : ''}
     </div>
     <div class="chat-insight-body">
