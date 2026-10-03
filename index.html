@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>uPay | উপায় - Mobile Financial Service</title>
+  <meta name="description" content="uPay (উপায়) - an easy, secured, and innovative financial solution app for all your lifestyle needs." />
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#E63946" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="uPay" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="uPay" />
+  <meta name="msapplication-TileColor" content="#E63946" />
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- App Icons -->
+  <link rel="icon" type="image/svg+xml" href="/icons/icon-96x96.svg" />
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.svg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Splash screen styles for iOS -->
+  <style>
+    body { margin: 0; background: #1A1A2E; }
+    /* iOS safe area support */
+    @supports (padding: env(safe-area-inset-top)) {
+      .top-header { padding-top: calc(16px + env(safe-area-inset-top)); }
+      .bottom-nav { padding-bottom: env(safe-area-inset-bottom); height: calc(70px + env(safe-area-inset-bottom)); }
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+  
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('[uPay] Service Worker registered:', reg.scope))
+          .catch(err => console.log('[uPay] SW registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
