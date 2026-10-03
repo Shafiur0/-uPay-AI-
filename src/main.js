@@ -1485,7 +1485,14 @@ function attachBottomNavListeners() {
 // Main Render Function
 // ============================================
 
-function render() {
+function render(skipHistory = false) {
+  if (!skipHistory && appState.currentScreen !== 'splash') {
+    const currentHash = window.location.hash.substring(1);
+    if (currentHash !== appState.currentScreen) {
+      window.history.pushState({ screen: appState.currentScreen, nav: appState.selectedNav }, '', `#${appState.currentScreen}`);
+    }
+  }
+
   switch (appState.currentScreen) {
     case 'splash':
       renderSplashScreen();
@@ -1583,5 +1590,26 @@ function render() {
 // ============================================
 // Initialize App
 // ============================================
+
+window.addEventListener('popstate', (e) => {
+  if (e.state && e.state.screen) {
+    appState.currentScreen = e.state.screen;
+    if (e.state.nav) {
+      appState.selectedNav = e.state.nav;
+    }
+  } else {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      appState.currentScreen = hash;
+    } else {
+      appState.currentScreen = appState.isLoggedIn ? 'home' : 'splash';
+    }
+  }
+  render(true);
+});
+
+if (window.location.hash) {
+  appState.currentScreen = window.location.hash.substring(1);
+}
 
 render();
