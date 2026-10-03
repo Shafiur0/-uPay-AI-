@@ -1045,6 +1045,9 @@ function renderProfilePage() {
   
   app.innerHTML = `
     <div class="page-screen" style="animation: none;">
+      <div class="page-header" style="background: transparent; position: absolute; top: 0; left: 0; z-index: 10;">
+        <button class="back-btn" id="back-btn">${icons.arrowLeft}</button>
+      </div>
       <div class="profile-header">
         <div class="profile-avatar">${icons.user}</div>
         <h2>${userData.name}</h2>

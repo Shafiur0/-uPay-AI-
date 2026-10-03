@@ -1213,7 +1213,7 @@ ul, ol {
   z-index: 50;
 }
 
-.page-header .back-btn {
+.back-btn {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
@@ -1224,12 +1224,12 @@ ul, ol {
   transition: var(--transition-normal);
 }
 
-.page-header .back-btn:active {
+.back-btn:active {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(0.95);
 }
 
-.page-header .back-btn svg {
+.back-btn svg {
   width: 20px;
   height: 20px;
   color: white;
