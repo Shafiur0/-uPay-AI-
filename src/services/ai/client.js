@@ -8,7 +8,7 @@ import { detectIntent, detectLanguage } from './intent.js';
 import { userData, transactions, goals } from '../../data.js';
 
 const API_URL = import.meta.env.PROD 
-  ? 'https://your-app-name.onrender.com/api/ai/ask' // Change this to your actual Render URL
+  ? 'https://upay-ai-backend.onrender.com/api/ai/ask'
   : '/api/ai/ask';
 
 export async function askFinancialCopilot(question) {
