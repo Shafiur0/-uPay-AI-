@@ -205,8 +205,9 @@ export function renderFinancialCenterPage(app, render, attachBottomNavListeners)
       <div style="padding:0 20px 20px;display:flex;flex-direction:column;gap:12px;">
         ${insights.length > 0 ? insights.slice(0, 3).map(ins => `
           <div class="chat-insight-card">
-            <div class="chat-insight-header">
-              ${icons.bot} ${ins.title}
+            <div class="chat-insight-header" style="display:flex;align-items:center;gap:8px;">
+              <span style="width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;color:var(--ai-primary);flex-shrink:0;">${icons.bot}</span>
+              <span style="font-weight:600;font-size:14px;color:var(--ai-primary);">${ins.title}</span>
             </div>
             <div class="chat-insight-body">
               <p style="font-size:13px;line-height:1.5;margin:0;">${ins.summary}</p>
