@@ -858,7 +858,7 @@ export function renderAskMyMoneyPage(app, render) {
   app.innerHTML = `
     <div class="ai-chat-screen">
       <div class="ai-chat-header">
-        <button class="back-btn" id="ai-back-btn" style="background:transparent;" aria-label="Go back">${icons.arrowLeft}</button>
+        <button class="back-btn" id="ai-back-btn" style="background:transparent; color: var(--text-primary);" aria-label="Go back">${icons.arrowLeft}</button>
         <div style="flex:1;">
           <h2 style="font-size:16px;margin:0;display:flex;align-items:center;gap:8px;">
             <span style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;color:var(--ai-primary);">${icons.bot}</span>

@@ -1222,6 +1222,7 @@ ul, ol {
   align-items: center;
   justify-content: center;
   transition: var(--transition-normal);
+  color: white;
 }
 
 .back-btn:active {
@@ -1232,7 +1233,7 @@ ul, ol {
 .back-btn svg {
   width: 20px;
   height: 20px;
-  color: white;
+  color: inherit;
 }
 
 .page-header h2 {
