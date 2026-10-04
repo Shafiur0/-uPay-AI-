@@ -21,115 +21,77 @@
 
 Transform your digital wallet from a simple payment tool into an intelligent financial companion that helps users understand, plan, and improve their financial behavior. By bridging the gap between raw transaction data and actionable insights, uPay AI fosters **financial literacy and independence**.
 
+---
+
+## 📖 Table of Contents
+- [🎯 Problem](#-problem)
+- [💡 Solution](#-solution)
+- [🛠 Tech Stack](#-tech-stack)
+- [✨ Features](#-features)
+- [🔐 Demo Account](#-demo-account)
+- [🚀 Quick Start](#-quick-start)
+- [🏗️ Architecture & AI Pipeline](#️-architecture--ai-pipeline)
+- [📁 Project Structure](#-project-structure)
+- [🗺️ Roadmap & Limitations](#️-roadmap--limitations)
+
+---
+
 ## 🎯 Problem
 
-Traditional MFS (Mobile Financial Service) apps show transactions but provide no intelligence. Users can see _where_ their money went, but not _why_ they're always short at month-end, _how_ to save for goals, or _what_ patterns drive their spending.
+Traditional MFS (Mobile Financial Service) apps show transactions but provide **no intelligence**. Users can see _where_ their money went, but not _why_ they're always short at month-end, _how_ to save for goals, or _what_ patterns drive their spending.
 
 ## 💡 Solution
 
-**uPay AI** adds a financial intelligence layer on top of the existing uPay wallet:
+**uPay AI** adds a financial intelligence layer on top of the existing uPay wallet, acting as a personal financial copilot:
 
-```
-Payment → Transaction Data → Financial Understanding → AI Insights → Planning → Goals → Financial Confidence
-```
+> `Payment → Transaction Data → Financial Understanding → AI Insights → Planning → Goals → Financial Confidence`
 
-### Key Innovation
+### 🔑 Key Innovations
+- **Ask My Money**: Conversational AI that uses your _actual_ financial data (not generic advice).
+- **Deterministic Financial Engine**: All calculations happen in application code — the AI *explains*, it doesn't calculate.
+- **Privacy-Aware Context**: Only relevant financial data is sent to the LLM.
+- **Bangla/Banglish Support**: Ask questions naturally in English, বাংলা, or Banglish.
 
-- **Ask My Money**: Conversational AI that uses your _actual_ financial data (not generic advice)
-- **Deterministic Financial Engine**: All calculations happen in application code — the AI explains, it doesn't calculate
-- **Privacy-Aware Context**: Only relevant financial data is sent to the LLM
-- **Bangla/Banglish Support**: Ask questions in English, বাংলা, or Banglish
+---
+
+## 🛠 Tech Stack
+
+**Frontend:**
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
+
+**Backend:**
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB)
+
+**AI & Cloud:**
+![OpenRouter](https://img.shields.io/badge/OpenRouter-AI-blueviolet?style=flat)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=flat&logo=vercel&logoColor=white)
+
+---
 
 ## ✨ Features
 
-### Financial Center
-- **Financial Health Score** (0-100) with transparent, explainable metrics
-- **Spending Analytics** — category breakdown, weekly trends, anomaly detection
-- **Cash Flow Forecast** — 7/14/30-day balance projection with charts
-- **Savings Goal Copilot** — create goals, get comfortable/target/aggressive plans
-- **Cash-Out Analysis** — track cash dependency patterns
-- **AI Insights** — automated spending alerts and pattern detection
-- **Financial Consistency** — 6-month behavioral analysis
-- **Personalized Learning** — education content triggered by your behavior
+### 🏦 Financial Center
+- **Financial Health Score (0-100)** with transparent, explainable metrics.
+- **Spending Analytics** — visual category breakdown, weekly trends, and anomaly detection.
+- **Cash Flow Forecast** — 7/14/30-day balance projection with intuitive charts.
+- **Savings Goal Copilot** — create goals and receive comfortable/target/aggressive saving plans.
+- **Cash-Out Analysis** — track cash dependency patterns to improve digital habits.
+- **Personalized AI Insights** — automated spending alerts and educational content triggered by behavior.
 
-### Ask My Money (AI Copilot)
-- Natural language financial queries
-- Structured JSON responses with evidence cards
-- Intent detection → targeted context → OpenRouter → validated output
-- Quick action buttons for common questions
-- Language selection (English / বাংলা / Banglish)
+### 💬 Ask My Money (AI Copilot)
+- Natural language financial queries with quick action buttons.
+- Structured JSON responses formatted beautifully into **evidence cards**.
+- Seamless language selection (English / বাংলা / Banglish).
 
-### Existing Wallet (Preserved)
-- Send Money, Cash Out, Add Money
-- Mobile Recharge, Bill Payment, QR Payment
-- Transaction History with filters
-- Profile, Notifications, Offers
+### 💳 Existing Wallet Features (Preserved)
+- Send Money, Cash Out, Add Money, Mobile Recharge, Bill Payment, QR Payment.
+- Advanced Transaction History with dynamic filters.
 
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────┐
-│              Frontend (Vite + Vanilla JS)    │
-│                                             │
-│  main.js ── financial-ui.js ── data.js      │
-│               │                             │
-│  services/financial/engine.js  (calculations)│
-│  services/ai/client.js         (API calls)  │
-│  services/ai/intent.js         (routing)    │
-└──────────────────┬──────────────────────────┘
-                   │ /api/ai/ask
-┌──────────────────▼──────────────────────────┐
-│           Backend (Express.js)               │
-│                                             │
-│  server.js                                  │
-│  services/openrouter.js  (retry, timeout)   │
-│  services/prompts.js     (system prompts)   │
-└──────────────────┬──────────────────────────┘
-                   │
-┌──────────────────▼──────────────────────────┐
-│           OpenRouter API                     │
-│           (Configurable Model)               │
-└─────────────────────────────────────────────┘
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+
-- OpenRouter API key ([openrouter.ai](https://openrouter.ai))
-
-### Installation
-
-```bash
-git clone <repo>
-cd upay
-npm install
-```
-
-### Environment Variables
-
-Create a `.env` file:
-
-```env
-OPENROUTER_API_KEY=your_key_here
-OPENROUTER_MODEL=google/gemini-2.5-flash
-OPENROUTER_SITE_URL=http://localhost:5173
-OPENROUTER_SITE_NAME=uPay AI Copilot
-PORT=3001
-```
-
-### Development
-
-```bash
-npm run dev:all    # Starts both frontend (5173) and backend (3001)
-```
-
-### Production Build
-
-```bash
-npm run build      # Build frontend
-npm run server     # Run backend separately
-```
+---
 
 ## 🔐 Demo Account
 
@@ -137,14 +99,13 @@ Access the **[Live Demo here](https://u-pay-ai.vercel.app/#login)**. Use the fol
 
 | Field | Value |
 |-------|-------|
-| Phone | `01712345678` (pre-filled) |
-| PIN | `1234` (pre-filled) |
+| **Phone** | `01712345678` (pre-filled) |
+| **PIN** | `1234` (pre-filled) |
 
-**Reset Demo Data**: Profile → Reset Demo Data button
+> 💡 **Tip:** To reset the 6 months of realistic transaction patterns, navigate to **Profile → Reset Demo Data**.
 
-## 📊 Demo Data
-
-6 months of realistic transaction patterns:
+<details>
+<summary><b>View Demo Data Patterns (6 Months)</b></summary>
 
 | Month | Pattern |
 |-------|---------|
@@ -155,37 +116,83 @@ Access the **[Live Demo here](https://u-pay-ai.vercel.app/#login)**. Use the fol
 | Month 5 | Improved savings behavior |
 | Month 6 | Month-end liquidity pressure |
 
-## 🤖 AI Architecture
+</details>
 
-### Context Pipeline
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- **Node.js** 18+
+- **OpenRouter API Key** ([Get it here](https://openrouter.ai))
+
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Shafiur0/-uPay-AI-.git
+   cd -uPay-AI-
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Variables:**
+   Create a `.env` file in the root directory:
+   ```env
+   OPENROUTER_API_KEY=your_key_here
+   OPENROUTER_MODEL=google/gemini-2.5-flash
+   OPENROUTER_SITE_URL=http://localhost:5173
+   OPENROUTER_SITE_NAME=uPay AI Copilot
+   PORT=3001
+   ```
+
+4. **Run Development Servers:**
+   ```bash
+   npm run dev:all    # Starts both Vite frontend (5173) and Express backend (3001)
+   ```
+
+---
+
+## 🏗️ Architecture & AI Pipeline
+
+### AI Context Pipeline
+`User Question → Intent Detection → Financial Data Retrieval → Context Builder → OpenRouter → Validation → UI`
+
+### System Architecture
+```text
+┌─────────────────────────────────────────────┐
+│              Frontend (Vite + Vanilla JS)   │
+│  main.js ── financial-ui.js ── data.js      │
+│               │                             │
+│  services/financial/engine.js  (math)       │
+│  services/ai/client.js         (API)        │
+└──────────────────┬──────────────────────────┘
+                   │ /api/ai/ask
+┌──────────────────▼──────────────────────────┐
+│           Backend (Express.js)              │
+│  server.js                                  │
+│  services/openrouter.js  (retry/timeout)    │
+│  services/prompts.js     (prompts)          │
+└──────────────────┬──────────────────────────┘
+                   ▼
+           [ OpenRouter API ]
 ```
-User Question → Intent Detection → Financial Data Retrieval → Context Builder → OpenRouter → Validation → UI
-```
 
-### Intent Categories
-- `SPENDING_ANALYSIS`, `TRANSACTION_EXPLANATION`, `SAVING_PLAN`
-- `GOAL_PLANNING`, `CASH_FLOW`, `FORECAST`, `CASH_OUT_ANALYSIS`
-- `FINANCIAL_HEALTH`, `FINANCIAL_LITERACY`, `GENERAL_FINANCIAL`
+### Security & Safety
+- API keys never exposed to browser; all AI integrations are server-side.
+- Hallucination protection via strict data-only context and structured JSON validation.
 
-### Safety
-- Server-side API calls only (API key never exposed to browser)
-- Rate limiting, timeout handling, retry with backoff
-- Structured JSON output with validation
-- Hallucination protection via data-only context
-- Graceful fallback when AI is unavailable
-
-## 🔒 Security
-
-- API keys stored in `.env` (gitignored)
-- Server-side OpenRouter integration only
-- Input validation and sanitization
-- Payload size limits
-- No real financial data or real money movement
-- Clearly labeled as prototype/demo
+---
 
 ## 📁 Project Structure
 
-```
+<details>
+<summary><b>Click to expand directory tree</b></summary>
+
+```text
 ├── index.html
 ├── package.json
 ├── vite.config.js
@@ -210,30 +217,27 @@ User Question → Intent Detection → Financial Data Retrieval → Context Buil
 │           └── intent.js   # Intent detection
 └── docs/                   # Documentation
 ```
-
-## ⚠️ Known Limitations
-
-- Demo data is simulated (not real financial accounts)
-- No persistent storage (data resets on page refresh)
-- Charts are inline SVG (not a charting library)
-- Single-user prototype
-- AI responses depend on OpenRouter availability
-
-## 🗺️ Future Roadmap
-
-- Voice-ready architecture
-- Advanced ML forecasting
-- Persistent storage with IndexedDB
-- Multi-currency support
-- Advanced accessibility (screen reader optimization)
-- Production authentication
-
-## 📝 License
-
-MIT License — See [LICENSE](LICENSE)
+</details>
 
 ---
 
-**Built for Track 03: Customer Innovation & Financial Independence**
+## 🗺️ Roadmap & Limitations
 
-> "The wallet doesn't just show where your money went. It helps you understand what you can do next."
+**⚠️ Known Limitations (Prototype):**
+- Demo data is simulated (not real financial accounts).
+- No persistent database (data resets on page refresh).
+- AI responses depend on OpenRouter availability.
+
+**🚀 Future Roadmap:**
+- 🎙️ Voice-ready architecture for hands-free interactions.
+- 📈 Advanced ML forecasting models.
+- 💽 Persistent storage with IndexedDB/MongoDB.
+- 🌍 Multi-currency support and advanced accessibility.
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+> *"The wallet doesn't just show where your money went. It helps you understand what you can do next."*
