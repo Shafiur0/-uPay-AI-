@@ -1,8 +1,25 @@
-# uPay AI — Personal Financial Copilot
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Shafiur0/-uPay-AI-/main/public/favicon.svg" alt="uPay AI Logo" width="120" height="120" />
+  
+  <h1>💳 uPay AI — Personal Financial Copilot</h1>
+  <p><em>Transform your digital wallet from a simple payment tool into an intelligent financial companion.</em></p>
+
+  [![Deploy on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel&logoColor=white)](https://u-pay-ai.vercel.app/#login)
+  [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/Shafiur0/-uPay-AI-.git)
+  [![Track 03](https://img.shields.io/badge/Hackathon-Track_03:_Customer_Innovation-blue)](#)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+  <br />
+
+  ### **[🚀 Try the Live Demo on Vercel](https://u-pay-ai.vercel.app/#login)** | **[💻 View Source Code](https://github.com/Shafiur0/-uPay-AI-.git)**
+
+</div>
+
+<br />
 
 > **Track 03: Customer Innovation & Financial Independence**
 
-Transform your digital wallet from a simple payment tool into an intelligent financial companion that helps users understand, plan, and improve their financial behavior.
+Transform your digital wallet from a simple payment tool into an intelligent financial companion that helps users understand, plan, and improve their financial behavior. By bridging the gap between raw transaction data and actionable insights, uPay AI fosters **financial literacy and independence**.
 
 ## 🎯 Problem
 
@@ -115,6 +132,8 @@ npm run server     # Run backend separately
 ```
 
 ## 🔐 Demo Account
+
+Access the **[Live Demo here](https://u-pay-ai.vercel.app/#login)**. Use the following credentials to explore the prototype:
 
 | Field | Value |
 |-------|-------|
